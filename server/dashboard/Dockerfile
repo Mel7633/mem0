@@ -8,7 +8,7 @@ COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 RUN \
   if [ -f yarn.lock ]; then yarn --frozen-lockfile --network-timeout 600000; \
   elif [ -f package-lock.json ]; then npm ci; \
-  elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm i; \
+  elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm i --unsafe-perm; \
   else npm install; \
   fi
 
@@ -19,7 +19,6 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED=1
-# Placeholder values replaced at runtime by entrypoint.sh
 ENV NEXT_PUBLIC_API_URL=NEXT_PUBLIC_API_URL
 ENV NEXT_PUBLIC_INSTANCE_NAME=NEXT_PUBLIC_INSTANCE_NAME
 

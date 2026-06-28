@@ -46,9 +46,9 @@ Ground-up rewrite of the memory pipeline with 20+ point benchmark improvements:
 - **~3-4x fewer tokens** — Under 7K tokens per retrieval vs 25K+ for full-context approaches
 - **ADD-only extraction** — Memories accumulate; nothing is overwritten or deleted
 - **Hybrid retrieval** — Semantic + BM25 keyword + entity boost, scored in parallel
-- **Entity linking** — Entities extracted, embedded, and linked across memories
+- **Graph memory (built-in)**: entities extracted, embedded, and linked across memories, with no external graph store required
 
-Breaking changes: Graph memory removed from OSS, `search()` defaults changed, deprecated params removed. See [migration guide](/migration/oss-v2-to-v3).
+Breaking changes: external graph stores removed from OSS (replaced by built-in graph memory), `search()` defaults changed, deprecated params removed. See [migration guide](/migration/oss-v2-to-v3).
 
 </Update>
 
@@ -113,7 +113,7 @@ Launched a unified Mem0 plugin across three major AI development environments �
 
 Major expansion of the provider ecosystem:
 
-- **Apache AGE** — New graph store support, bringing the total to 4 graph store backends (Neo4j, Memgraph, Kuzu, Apache AGE)
+- **Apache AGE** — New graph store support, bringing the total to 4 graph store backends (Neo4j, Memgraph, Kuzu, Apache AGE). **Note:** All external graph store backends (Neo4j, Memgraph, Kuzu, Apache AGE) were subsequently removed in v2.0.0 (2026-04-14). Graph memory is now built-in entity linking with no external graph store required; see the [v2.0.0 entry above](#mem0-sdk-v2-0-0-v3-0-0).
 - **Turbopuffer** — New vector database provider for Python SDK
 - **MiniMax** — New LLM provider with dedicated AWS Bedrock support
 - **pgvector for Node.js** — PostgreSQL vector support added to the TypeScript OSS SDK

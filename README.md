@@ -153,6 +153,7 @@ See the [self-hosted docs](https://docs.mem0.ai/open-source/overview) for config
 
 1. Sign up on [Mem0 Platform](https://app.mem0.ai?utm_source=oss&utm_medium=readme)
 2. Embed the memory layer via SDK or API keys
+3. Using hosted Qdrant vectors? See the [Platform migration guide](https://docs.mem0.ai/migration/oss-to-platform) to import them into Mem0 Platform.
 
 ### CLI
 
@@ -185,9 +186,10 @@ npx skills add https://github.com/mem0ai/mem0 --skill mem0-vercel-ai-sdk
 ```bash
 npx skills add https://github.com/mem0ai/mem0 --skill mem0-integrate
 npx skills add https://github.com/mem0ai/mem0 --skill mem0-test-integration
+npx skills add https://github.com/mem0ai/mem0 --skill mem0-oss-to-platform
 ```
 
-Use `/mem0-integrate` to wire Mem0 into an existing repo via a test-first pipeline, then `/mem0-test-integration` to verify. See the [skills catalog](./skills/) or [Vibecoding with Mem0](https://docs.mem0.ai/vibecoding) for the full picture.
+Use `/mem0-integrate` to wire Mem0 into an existing repo via a test-first pipeline, then `/mem0-test-integration` to verify. Use `/mem0-oss-to-platform` to migrate an existing project from Mem0 OSS to the hosted Platform SDK. See the [skills catalog](./skills/) or [Vibecoding with Mem0](https://docs.mem0.ai/vibecoding) for the full picture.
 
 ### Basic Usage
 
